@@ -1,6 +1,14 @@
 # RestaurantsApplication
 Restaurants Application Based on Requirement 
 
+Task -
+1 - Responsive design list all restraurant
+2 - Filter restraurant based on cuisines
+3- Implement search by restraurant name
+4- Multiple sorts based on - rating votes and Average cost
+
+
+
 # Resto
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
