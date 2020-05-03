@@ -3,6 +3,7 @@ import { DataService } from 'src/app/services/data.service';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import * as _ from 'lodash';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,7 @@ export class HomeComponent implements OnInit {
     private dataService: DataService,
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer,
+    private spinner: NgxSpinnerService
   ) {
     iconRegistry.addSvgIcon(
       'laptop',
@@ -36,11 +38,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   // this.spinnerService.show();
+    this.spinner.show();
     this.dataService.getRestroAllData().subscribe((res) => {
       this.character = res.body;
       this.formateData(this.character);
-     // this.spinnerService.hide();
+      setTimeout(() => {
+        /** spinner ends after 5 seconds */
+        this.spinner.hide();
+      }, 3000);
     });
   }
 

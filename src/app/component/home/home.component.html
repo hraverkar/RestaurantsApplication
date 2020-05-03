@@ -1,13 +1,14 @@
-<mat-drawer-container >
-  <mat-drawer class="example-container" mode="side" opened><app-filter (searchResName)="searchName($event)"
-    (flagBool) = "sortLike($event)"
-    (ratingFlagBool) = "sortRating($event)"
-    (priceFlagBool) ="sortPrice($event)"
-    ></app-filter></mat-drawer>
+<ngx-spinner></ngx-spinner>
+<mat-drawer-container>
+  <mat-drawer class="example-container" mode="side" opened>
+    <app-filter (searchResName)="searchName($event)" (flagBool)="sortLike($event)" (ratingFlagBool)="sortRating($event)"
+      (priceFlagBool)="sortPrice($event)"></app-filter>
+  </mat-drawer>
   <mat-drawer-content>
     <div class="flex-container">
       <mat-card class="flex-item" *ngFor="let article of Data">
-        <img mat-card-image src='http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg' alt="{{article.restId}}">
+        <img mat-card-image src='http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg'
+          alt="{{article.restId}}">
         <!-- src='https://source.unsplash.com/random' -->
         <mat-card-header>
           <mat-card-title>{{article.restName}}</mat-card-title>
@@ -19,12 +20,12 @@
               </span>
             </ng-template>
             <button mat-raised-button color="accent">
-            <ngb-rating [(rate)]= article.agRating [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
-          </button>
+              <ngb-rating [(rate)]=article.agRating [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+            </button>
 
-          <!-- <star-rating value={{article.agRating}} totalstars="5" checkedcolor="red" uncheckedcolor="yellow" size="14px" readonly="true"></star-rating>
+            <!-- <star-rating value={{article.agRating}} totalstars="5" checkedcolor="red" uncheckedcolor="yellow" size="14px" readonly="true"></star-rating>
             <button mat-raised-button>{{article.ratingText}} || {{article.ratingColor}}</button> -->
-           </mat-card-subtitle>
+          </mat-card-subtitle>
         </mat-card-header>
 
         <mat-card-content>
