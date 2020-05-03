@@ -12,6 +12,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './component/footer/footer.component';
 import { HeaderComponent } from './component/header/header.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+import { RatingModule } from 'ng-starrating';
+
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, FilterComponent, FooterComponent, HeaderComponent],
@@ -23,6 +27,9 @@ import { HeaderComponent } from './component/header/header.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    NgbModule,
+    RatingModule,
+    // Ng4LoadingSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent],
