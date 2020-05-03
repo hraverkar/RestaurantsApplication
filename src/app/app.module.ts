@@ -13,8 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './component/footer/footer.component';
 import { HeaderComponent } from './component/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { RatingModule } from 'ng-starrating';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 @NgModule({
@@ -29,7 +29,7 @@ import { RatingModule } from 'ng-starrating';
     FormsModule,
     NgbModule,
     RatingModule,
-    // Ng4LoadingSpinnerModule
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent],
