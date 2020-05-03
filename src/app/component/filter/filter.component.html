@@ -18,6 +18,11 @@
   </mat-card-content>
 </mat-card>
 
+<mat-divider></mat-divider>
+
+<mat-card class="card-Style">
+  <mat-card-title>Sorting</mat-card-title>
+  <mat-card-content>
 <mat-button-toggle-group #group="matButtonToggleGroup" multiple (change)="toggleChange($event)">
   <mat-button-toggle matTooltip="Sort by Like" value="Like" #Like>
     <mat-icon>format_align_left</mat-icon>
@@ -29,3 +34,9 @@
     <mat-icon>format_align_right</mat-icon>
   </mat-button-toggle>
 </mat-button-toggle-group>
+</mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Filter</mat-card-title>
+</mat-card>
