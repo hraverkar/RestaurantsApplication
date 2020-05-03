@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private dataService: DataService,
     iconRegistry: MatIconRegistry,
-    sanitizer: DomSanitizer
+    sanitizer: DomSanitizer,
   ) {
     iconRegistry.addSvgIcon(
       'laptop',
@@ -36,9 +36,11 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+   // this.spinnerService.show();
     this.dataService.getRestroAllData().subscribe((res) => {
       this.character = res.body;
       this.formateData(this.character);
+     // this.spinnerService.hide();
     });
   }
 

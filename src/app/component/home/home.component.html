@@ -11,13 +11,26 @@
         <!-- src='https://source.unsplash.com/random' -->
         <mat-card-header>
           <mat-card-title>{{article.restName}}</mat-card-title>
-          <mat-card-subtitle>Cuisines - {{article.cuisines}} || {{article.agRating}} {{article.ratingColor}}
-            {{article.ratingText}} </mat-card-subtitle>
+
+          <mat-card-subtitle>Cuisines - {{article.cuisines}}
+            <ng-template #t let-fill="fill">
+              <span class="star" [class.full]="fill === 100">
+                <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+              </span>
+            </ng-template>
+            <button mat-raised-button color="accent">
+            <ngb-rating [(rate)]= article.agRating [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+          </button>
+
+          <!-- <star-rating value={{article.agRating}} totalstars="5" checkedcolor="red" uncheckedcolor="yellow" size="14px" readonly="true"></star-rating>
+            <button mat-raised-button>{{article.ratingText}} || {{article.ratingColor}}</button> -->
+           </mat-card-subtitle>
         </mat-card-header>
 
         <mat-card-content>
           <p>ID - {{article.restId}}</p>
-          Average Cost for two - {{article.avgCost}} {{article.currency}}
+          <button mat-button>Average Cost for two - {{article.avgCost}} {{article.currency}}</button>
+
         </mat-card-content>
 
         <mat-card-actions>
