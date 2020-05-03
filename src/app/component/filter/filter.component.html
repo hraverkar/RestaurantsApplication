@@ -1,0 +1,31 @@
+<mat-card class="card-Style">
+  <mat-card-title>Search</mat-card-title>
+  <mat-card-content>
+    <form #f="ngForm" (ngSubmit)="onSearch(f)">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Restaurant Name</mat-label>
+          <input matInput ngModel #resName="ngModel" name="resName" class="form-control" placeholder="Restaurant Name">
+          <div class="alert alert-danger" *ngIf="resName.touched && resName.errors?.required">Name is required!</div>
+        </mat-form-field>
+      </p>
+      <div class="button">
+        <button mat-raised-button color="primary" type="submit" mat-button>
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-button-toggle-group #group="matButtonToggleGroup" multiple (change)="toggleChange($event)">
+  <mat-button-toggle matTooltip="Sort by Like" value="Like" #Like>
+    <mat-icon>format_align_left</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle  matTooltip="Sort by Rating" value="Rating" #Rating>
+    <mat-icon>format_align_center</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle matTooltip="Sort by Price" value="Price" #Price>
+    <mat-icon>format_align_right</mat-icon>
+  </mat-button-toggle>
+</mat-button-toggle-group>

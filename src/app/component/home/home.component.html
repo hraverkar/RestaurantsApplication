@@ -1,0 +1,41 @@
+<mat-drawer-container >
+  <mat-drawer class="example-container" mode="side" opened><app-filter (searchResName)="searchName($event)"
+    (flagBool) = "sortLike($event)"
+    (ratingFlagBool) = "sortRating($event)"
+    (priceFlagBool) ="sortPrice($event)"
+    ></app-filter></mat-drawer>
+  <mat-drawer-content>
+    <div class="flex-container">
+      <mat-card class="flex-item" *ngFor="let article of Data">
+        <img mat-card-image src='http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg' alt="{{article.restId}}">
+        <!-- src='https://source.unsplash.com/random' -->
+        <mat-card-header>
+          <mat-card-title>{{article.restName}}</mat-card-title>
+          <mat-card-subtitle>Cuisines - {{article.cuisines}} || {{article.agRating}} {{article.ratingColor}}
+            {{article.ratingText}} </mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>ID - {{article.restId}}</p>
+          Average Cost for two - {{article.avgCost}} {{article.currency}}
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button mat-raised-button matTooltip="Table Booking">
+            <mat-icon svgIcon="laptop"></mat-icon>
+            {{article.tableBooking}}
+          </button>
+          <button mat-raised-button matTooltip="Online Delivery">
+            <mat-icon svgIcon="food-and-restaurant"></mat-icon>
+            {{article.onlineDelivery}}
+          </button>
+          <button mat-raised-button matTooltip="Like">
+            <mat-icon svgIcon="hand"></mat-icon>
+            {{article.restVote}}
+          </button>
+        </mat-card-actions>
+      </mat-card>
+
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
